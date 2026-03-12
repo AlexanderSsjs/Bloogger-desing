@@ -1,0 +1,160 @@
+
+/* ==========================================
+   MAGIA PARA ESCRITORIO (PC y Tablets)
+========================================== */
+@media (min-width: 992px) {
+    .contacto-info { gap: 20px; }
+    .info-card { padding: 25px 30px; gap: 20px; }
+    .info-icon { font-size: 30px; padding: 15px; }
+    .info-text h4 { font-size: 17px; }
+    .info-text p { font-size: 14px; }
+    
+    /* 🔥 Efectos Hover Premium (Solo para PC) 🔥 */
+    .info-card:hover { 
+        transform: translateY(-5px) scale(1.01); /* Sube y se acerca 1% */
+        border-color: rgba(217, 4, 41, 0.2); 
+        box-shadow: 0 20px 40px rgba(217, 4, 41, 0.08); /* Sombra roja difuminada */
+        z-index: 2;
+    }
+    .info-card:hover .info-icon {
+        transform: scale(1.15) rotate(5deg); /* El icono levita y gira suavemente */
+        filter: drop-shadow(0 4px 6px rgba(217, 4, 41, 0.3)); /* El emoji proyecta luz roja */
+    }
+    .btn-link:hover { color: var(--primary-dark); }
+    .btn-link:hover::after { transform: translateX(6px); } /* La flecha se estira */
+}
+/* ==========================================
+   COLUMNA DERECHA: CAJAS DE ACCIÓN (MÓVIL)
+========================================== */
+.contacto-extra {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.extra-box {
+    background: linear-gradient(145deg, var(--bg-dark), #151822);
+    color: var(--white);
+    padding: 30px 25px;
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    border: 1px solid var(--border-glass);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+/* Estructura del rayo de luz (Shine) */
+.extra-box::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 50%; height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.15), transparent);
+    transform: skewX(-25deg);
+    z-index: 1;
+}
+
+.extra-box h3 { font-size: 20px; font-weight: 800; letter-spacing: -0.5px; position: relative; z-index: 2; }
+.extra-box p { font-size: 14px; line-height: 1.5; color: #94a3b8; margin-bottom: 10px; position: relative; z-index: 2; }
+
+/* Tarjeta WhatsApp Base */
+.extra-box.whatsapp-group { 
+    background: linear-gradient(145deg, #064e3b, #022c22);
+    border-color: rgba(37, 211, 102, 0.2);
+}
+
+.extra-box.whatsapp-group::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 120px; height: 120px;
+    background: radial-gradient(circle, rgba(37, 211, 102, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.btn-accent {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 14px 20px;
+    border-radius: var(--radius-sm);
+    background: var(--white) !important;
+    color: var(--text-dark) !important;
+    font-size: 14px;
+    font-weight: 800;
+    position: relative;
+    z-index: 2; 
+    transition: all 0.3s ease;
+}
+
+.whatsapp-group .btn-accent { background: #25d366 !important; color: var(--bg-dark) !important; }
+.btn-accent:active { transform: scale(0.96); opacity: 0.9; }
+
+/* 🔥 DEFINICIÓN DE LA ANIMACIÓN SHINE 🔥 */
+@keyframes shine {
+    100% { left: 200%; }
+}
+
+/* ==========================================
+   MAGIA PARA ESCRITORIO (PC y Tablets Grandes)
+========================================== */
+@media (min-width: 992px) {
+    .contacto-grid {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: start;
+    }
+
+    .contacto-info { gap: 20px; }
+    .info-card { padding: 25px 30px; gap: 20px; }
+    .info-icon { font-size: 30px; padding: 15px; }
+    .info-text h4 { font-size: 17px; }
+    .info-text p { font-size: 14px; }
+    
+    .info-card:hover { 
+        transform: translateY(-5px) scale(1.01); 
+        border-color: rgba(217, 4, 41, 0.2); 
+        box-shadow: 0 20px 40px rgba(217, 4, 41, 0.08), 0 1px 3px rgba(0,0,0,0.02); 
+        z-index: 2;
+    }
+    .info-card:hover .info-icon {
+        transform: scale(1.15) rotate(5deg);
+        background: var(--glow-primary);
+    }
+    .btn-link:hover { color: var(--primary-dark); }
+    .btn-link:hover::after { transform: translateX(6px); }
+
+    .contacto-extra { gap: 25px; }
+    .extra-box { padding: 40px; }
+    .extra-box h3 { font-size: 22px; }
+    .extra-box p { font-size: 15px; }
+    .extra-box.whatsapp-group::before { width: 200px; height: 200px; top: -50px; right: -50px; }
+    
+    .btn-accent { display: inline-block; width: fit-content; }
+
+    /* 🔥 ACTIVACIÓN DEL SHINE EN HOVER 🔥 */
+    .extra-box:hover::after { 
+        animation: shine 0.7s forwards; 
+    }
+    
+    .extra-box:not(.whatsapp-group):hover {
+        transform: translateY(-8px);
+        box-shadow: 0 25px 50px rgba(217, 4, 41, 0.2);
+        border-color: rgba(217, 4, 41, 0.4);
+    }
+    
+    .extra-box.whatsapp-group:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 25px 50px rgba(37, 211, 102, 0.25);
+        border-color: rgba(37, 211, 102, 0.5);
+    }
+
+    .btn-accent:hover {
+        transform: scale(1.06) translateY(-4px); 
+        box-shadow: 0 12px 25px rgba(255, 255, 255, 0.2);
+    }
+    .whatsapp-group .btn-accent:hover { box-shadow: 0 12px 25px rgba(37, 211, 102, 0.35); }
+}
