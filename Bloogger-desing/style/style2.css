@@ -1,0 +1,595 @@
+
+/* ==========================================
+   MAGIA PARA ESCRITORIO (PC y Tablets)
+========================================== */
+@media (min-width: 992px) {
+    .contacto-info { gap: 20px; }
+    .info-card { padding: 25px 30px; gap: 20px; }
+    .info-icon { font-size: 30px; padding: 15px; }
+    .info-text h4 { font-size: 17px; }
+    .info-text p { font-size: 14px; }
+    
+    /* 🔥 Efectos Hover Premium (Solo para PC) 🔥 */
+    .info-card:hover { 
+        transform: translateY(-5px) scale(1.01); /* Sube y se acerca 1% */
+        border-color: rgba(217, 4, 41, 0.2); 
+        box-shadow: 0 20px 40px rgba(217, 4, 41, 0.08); /* Sombra roja difuminada */
+        z-index: 2;
+    }
+    .info-card:hover .info-icon {
+        transform: scale(1.15) rotate(5deg); /* El icono levita y gira suavemente */
+        filter: drop-shadow(0 4px 6px rgba(217, 4, 41, 0.3)); /* El emoji proyecta luz roja */
+    }
+    .btn-link:hover { color: var(--primary-dark); }
+    .btn-link:hover::after { transform: translateX(6px); } /* La flecha se estira */
+}
+/* ==========================================
+   COLUMNA DERECHA: CAJAS DE ACCIÓN (MÓVIL)
+========================================== */
+.contacto-extra {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.extra-box {
+    background: linear-gradient(145deg, var(--bg-dark), #151822);
+    color: var(--white);
+    padding: 30px 25px;
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    border: 1px solid var(--border-glass);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+/* Estructura del rayo de luz (Shine) */
+.extra-box::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 50%; height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.15), transparent);
+    transform: skewX(-25deg);
+    z-index: 1;
+}
+
+.extra-box h3 { font-size: 20px; font-weight: 800; letter-spacing: -0.5px; position: relative; z-index: 2; }
+.extra-box p { font-size: 14px; line-height: 1.5; color: #94a3b8; margin-bottom: 10px; position: relative; z-index: 2; }
+
+/* Tarjeta WhatsApp Base */
+.extra-box.whatsapp-group { 
+    background: linear-gradient(145deg, #064e3b, #022c22);
+    border-color: rgba(37, 211, 102, 0.2);
+}
+
+.extra-box.whatsapp-group::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 120px; height: 120px;
+    background: radial-gradient(circle, rgba(37, 211, 102, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.btn-accent {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 14px 20px;
+    border-radius: var(--radius-sm);
+    background: var(--white) !important;
+    color: var(--text-dark) !important;
+    font-size: 14px;
+    font-weight: 800;
+    position: relative;
+    z-index: 2; 
+    transition: all 0.3s ease;
+}
+
+.whatsapp-group .btn-accent { background: #25d366 !important; color: var(--bg-dark) !important; }
+.btn-accent:active { transform: scale(0.96); opacity: 0.9; }
+
+/* 🔥 DEFINICIÓN DE LA ANIMACIÓN SHINE 🔥 */
+@keyframes shine {
+    100% { left: 200%; }
+}
+
+/* ==========================================
+   MAGIA PARA ESCRITORIO (PC y Tablets Grandes)
+========================================== */
+@media (min-width: 992px) {
+    .contacto-grid {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: start;
+    }
+
+    .contacto-info { gap: 20px; }
+    .info-card { padding: 25px 30px; gap: 20px; }
+    .info-icon { font-size: 30px; padding: 15px; }
+    .info-text h4 { font-size: 17px; }
+    .info-text p { font-size: 14px; }
+    
+    .info-card:hover { 
+        transform: translateY(-5px) scale(1.01); 
+        border-color: rgba(217, 4, 41, 0.2); 
+        box-shadow: 0 20px 40px rgba(217, 4, 41, 0.08), 0 1px 3px rgba(0,0,0,0.02); 
+        z-index: 2;
+    }
+    .info-card:hover .info-icon {
+        transform: scale(1.15) rotate(5deg);
+        background: var(--glow-primary);
+    }
+    .btn-link:hover { color: var(--primary-dark); }
+    .btn-link:hover::after { transform: translateX(6px); }
+
+    .contacto-extra { gap: 25px; }
+    .extra-box { padding: 40px; }
+    .extra-box h3 { font-size: 22px; }
+    .extra-box p { font-size: 15px; }
+    .extra-box.whatsapp-group::before { width: 200px; height: 200px; top: -50px; right: -50px; }
+    
+    .btn-accent { display: inline-block; width: fit-content; }
+
+    /* 🔥 ACTIVACIÓN DEL SHINE EN HOVER 🔥 */
+    .extra-box:hover::after { 
+        animation: shine 0.7s forwards; 
+    }
+    
+    .extra-box:not(.whatsapp-group):hover {
+        transform: translateY(-8px);
+        box-shadow: 0 25px 50px rgba(217, 4, 41, 0.2);
+        border-color: rgba(217, 4, 41, 0.4);
+    }
+    
+    .extra-box.whatsapp-group:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 25px 50px rgba(37, 211, 102, 0.25);
+        border-color: rgba(37, 211, 102, 0.5);
+    }
+
+    .btn-accent:hover {
+        transform: scale(1.06) translateY(-4px); 
+        box-shadow: 0 12px 25px rgba(255, 255, 255, 0.2);
+    }
+    .whatsapp-group .btn-accent:hover { box-shadow: 0 12px 25px rgba(37, 211, 102, 0.35); }
+}
+    /* =========================================
+    INVIERTE.PE-SECTION (FULL OPTIMIZADO)
+   ========================================= */
+:root {
+    --primary-color: #f1c40f;    /* Amarillo */
+    --dark-blue: #1B263B;       /* Azul Profundo */
+    --bg-light: #f4f7f6;
+    --white: #ffffff;
+    --text-main: #2d3436;
+    --text-muted: #636e72;
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.container-pages {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+.invierte-section {
+    background-color: var(--white);
+    padding: 50px 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+}
+
+/* --- Header --- */
+.invierte-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.invierte-header h2 {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    color: var(--dark-blue);
+    font-weight: 800;
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
+}
+
+.badge-container {
+    display: flex;
+    justify-content: center;
+}
+
+.badge {
+    background: var(--primary-color);
+    color: var(--dark-blue);
+    padding: 6px 20px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    box-shadow: 0 4px 10px rgba(241, 196, 15, 0.3);
+}
+
+/* --- Grid de Contenidos --- */
+.invierte-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.invierte-card {
+    background: var(--bg-light);
+    padding: 35px 25px;
+    border-radius: 16px;
+    transition: var(--transition);
+    border: 2px solid ;
+    border-color: var(--primary-color);
+}
+
+.invierte-card:hover {
+    transform: translateY(-8px);
+    background: var(--white);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    border-color: var(--primary-color);
+}
+
+.invierte-card .card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.invierte-card h3 {
+    color: var(--dark-blue);
+    font-size: 1.3rem;
+    margin-bottom: 18px;
+    font-weight: 700;
+}
+
+.invierte-card ul {
+    list-style: none;
+    padding: 0;
+    margin-top: auto;
+}
+
+.invierte-card ul li {
+    padding: 10px 0;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    line-height: 1.4;
+    display: flex;
+    gap: 10px;
+}
+
+.invierte-card ul li::before {
+    content: "➜";
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.format-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 15px;
+}
+
+.format-tags span {
+    background: var(--dark-blue);
+    color: white;
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+/* --- Sección de Pagos (Nueva) --- */
+.payment-methods {
+    margin-top: 60px;
+    padding-top: 50px;
+    border-top: 2px dashed #e2e8f0;
+}
+
+.payment-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.payment-badge {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+.payment-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    align-items: start;
+}
+
+.payment-group h4 {
+    color: var(--dark-blue);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.payment-group h4::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #eee;
+}
+
+/* --- Tarjetas de Banco (Ajuste General) --- */
+.bank-card {
+    display: flex;
+    align-items: center; /* Centra verticalmente logo y texto */
+    background: var(--bg-light);
+    border-radius: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden; /* ¡ESTO ES VITAL! Corta cualquier desborde del logo */
+    transition: all 0.3s ease;
+}
+
+.bank-card:hover {
+    border-color: var(--dark-blue);
+    transform: translateY(-4px); /* Elevación sutil */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+div.bcp {
+    background:rgb(6, 69, 115);
+}
+div .bbva {
+    background:rgb(0, 32, 60);
+}
+div .interbank {
+    background:rgb(5, 161, 18);
+}
+
+/* --- NUEVO: Contenedor del Logo --- */
+.bank-logo-wrapper {
+    width: 130px;           /* Reducido para mejor balance */
+    height: 80px;           /* Altura fija controlada */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    flex-shrink: 0;
+}
+/* --- Imagen del Logo (Actualizada) --- */
+.logo-bank {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* --- Info de Cuenta (Mantener igual) --- */
+.account-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.account-info .label {
+    font-size: 0.8rem;
+    color: var(--white) !important;
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+.account-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--white) !important;
+}
+
+/* --- Responsividad --- */
+@media (max-width: 600px) {
+    .bank-card {
+        flex-direction: row;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .bank-logo-wrapper {
+        margin-bottom: 10px;
+    }
+}
+
+.account-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    font-size: 0.85rem;
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.account-number {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.05rem;
+    font-weight: bold;
+    color: var(--dark-blue);
+}
+
+.account-info .label { 
+    display: block;
+    font-size: 0.75rem; 
+    color: var(--text-muted); 
+    font-weight: 600; 
+}
+
+.account-number {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--dark-blue);
+    letter-spacing: 0.5px;
+}
+
+/* Apps Yape/Plin */
+.mobile-pay-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.app-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 16px;
+    text-align: center;
+    color: white;
+}
+
+.app-card.yape { background: linear-gradient(190deg, #d202fc, #630476 ); }
+.app-card.plin { background: linear-gradient(190deg, #00d2ff, #3a7bd5); }
+
+.app-card img { width: 45px; margin-bottom: 10px; border-radius: 8px; }
+
+.app-number { font-weight: 800; font-size: 1.1rem; display: block; }
+
+.payment-notice {
+    margin-top: 20px;
+    background: #fff9db;
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-color);
+    font-size: 0.85rem;
+    color: #856404;
+}
+.invierte-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+}
+/* --- CTA Section --- */
+.cta-enrollment {
+    margin-top: 50px;
+    background: var(--dark-blue);
+    border-radius: 16px;
+    padding: 40px;
+    color: white;
+    text-align: center;
+}
+.cta-content h3 { font-size: 1.8rem; margin-bottom: 10px; }
+.cta-content p { margin-bottom: 30px; opacity: 0.8; }
+.cta-actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.cta-actions span {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.btn-whatsapp {
+    display: inline-block;
+    background-color: #25d366;
+    color: white;
+    padding: 16px 40px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+.btn-whatsapp:hover {
+    background-color: #1eb954;
+    transform: scale(1.05);
+}
+.cta-note {
+    font-size: 0.85rem !important;
+    text-align: center;
+    opacity: 0.7 !important;
+}
+
+/* --- Responsividad --- */
+@media (max-width: 992px) {
+    .invierte-grid { grid-template-columns: repeat(2, 1fr); }
+    .payment-container { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+    .invierte-section { padding: 30px 20px; }
+    .invierte-grid { grid-template-columns: 1fr; }
+    .bank-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center; 
+        padding: 10px; 
+    }
+    /* Contenedor del logo: le damos más espacio */
+    .bank-logo-wrapper {
+        width: 100%;
+        max-width: 100px; /* Permitimos que sea más ancho en móvil */
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 0px;
+    }
+
+    /* La imagen propiamente */
+    .logo-bank {
+        width: 100%; 
+        height: auto;
+        object-fit: contain;
+        transform: scale(1); 
+        transition: transform 0.3s ease;
+    }
+
+    .mobile-pay-grid { grid-template-columns: 1fr; }
+
+    .mobile-pay-grid { grid-template-columns: 1fr; }
+}
+/* Responsividad para móviles */
+@media (max-width: 480px) {
+    .bank-card {
+        flex-direction: column; 
+        text-align: center;
+        padding: 25px 15px; /* Reducimos padding lateral para ganar espacio */
+    }
+    
+    .bank-logo-wrapper {
+    width: 100%;
+    max-width: 90px;
+    margin-bottom:10px;
+    }
+
+    .logo-bank {
+        width: 100%;
+        height: auto;
+        /* Bajamos el scale a 1.1 o lo quitamos para que se vea natural */
+        transform: scale(1); 
+        object-fit: contain;
+    }
+
+    .account-number {
+        font-size: 1rem; /* Bajamos un poco el tamaño para que no se rompa en dos líneas */
+        word-break: break-all; /* Seguridad extra para números largos */
+    }
+}
+
